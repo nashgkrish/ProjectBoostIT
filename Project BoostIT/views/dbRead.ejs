@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display data from MySQLdb</title>
+</head>
+<body>
+
+	<table class="table table-hover" style="margin-left: 100px;">
+		<tr>
+			<th style="padding-right: 10px;">Name</th>
+			<th style="padding-right: 10px;">Phone Number</th>
+			<th style="padding-right: 10px;">Email</th>
+			<th style="padding-right: 10px;">Message</th>
+		</tr>
+	</table>
+	
+		<% if(userData.length != 0) { 
+			userData.forEach(function(data) { %>
+				<tr>
+					<td><%= data.Name %></td>
+					<td><%= data.PhoneNumber %></td>
+					<td><%= data.Email %></td>
+					<td><%= data.Message %></td>
+				</tr>
+		<% }); 
+		} else { %>
+			<tr>
+				<td colspan="4">No Data Found</td>
+			</tr>
+		<% } %>
+	</table>
+	
+    
+</body>
+</html>
